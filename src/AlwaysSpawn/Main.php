@@ -13,6 +13,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\world\Position;
 use pocketmine\Server;
 
+use pocketmine\math\Vector3;
 use pocketmine\world\particle\EnchantParticle;
 use pocketmine\world\particle\HappyVillagerParticle;
 use pocketmine\world\sound\XpCollectSound;
@@ -47,8 +48,14 @@ class Main extends PluginBase implements Listener {
         if($this->getConfig()->getNested("effects.guardian-angel") === true){
 
             for($i = 0; $i < 15; $i++){
-                $world->addParticle($pos, new EnchantParticle());
-                $world->addParticle($pos, new HappyVillagerParticle());
+                $offset = new Vector3(
+                    $pos->x + mt_rand(-1,1),
+                    $pos->y + mt_rand(0,2),
+                    $pos->z + mt_rand(-1,1)
+                );
+
+                $world->addParticle($offset, new EnchantParticle(new Vector3(0,1,0)));
+                $world->addParticle($offset, new HappyVillagerParticle());
             }
 
             $world->addSound($pos, new XpCollectSound());
