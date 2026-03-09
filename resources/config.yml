@@ -1,0 +1,14 @@
+spawn:
+  world: "world"
+  x: 59
+  y: 78
+  z: 242
+  yaw: 0
+  pitch: 0
+
+messages:
+  teleport: "§aTeleporting to spawn..."
+  join-teleport: "§eA guardian angel guides you to spawn..."
+
+effects:
+  guardian-angel: true
