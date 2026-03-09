@@ -1,0 +1,16 @@
+name: AlwaysSpawn
+main: AlwaysSpawn\Main
+version: 1.1.0
+api: 5.0.0
+author: ZyberPE
+description: Teleport players to spawn with guardian angel join effect
+
+commands:
+  spawn:
+    description: Teleport to spawn
+    usage: "/spawn"
+    permission: alwaysspawn.command
+
+permissions:
+  alwaysspawn.command:
+    default: true
