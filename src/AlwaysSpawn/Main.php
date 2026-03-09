@@ -13,8 +13,9 @@ use pocketmine\command\CommandSender;
 use pocketmine\world\Position;
 use pocketmine\Server;
 
-use pocketmine\world\particle\TotemParticle;
-use pocketmine\world\sound\TotemUseSound;
+use pocketmine\world\particle\EnchantParticle;
+use pocketmine\world\particle\HappyVillagerParticle;
+use pocketmine\world\sound\XpCollectSound;
 
 class Main extends PluginBase implements Listener {
 
@@ -45,8 +46,12 @@ class Main extends PluginBase implements Listener {
 
         if($this->getConfig()->getNested("effects.guardian-angel") === true){
 
-            $world->addParticle($pos, new TotemParticle());
-            $world->addSound($pos, new TotemUseSound());
+            for($i = 0; $i < 15; $i++){
+                $world->addParticle($pos, new EnchantParticle());
+                $world->addParticle($pos, new HappyVillagerParticle());
+            }
+
+            $world->addSound($pos, new XpCollectSound());
         }
     }
 
