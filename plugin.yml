@@ -7,7 +7,7 @@ description: Teleport players to spawn with guardian angel join effect
 
 commands:
   spawn:
-    description: Teleport to spawn
+    description: Teleport to server spawn
     usage: "/spawn"
     permission: alwaysspawn.command
 
